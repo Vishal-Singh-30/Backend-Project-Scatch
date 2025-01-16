@@ -19,10 +19,6 @@ const userSchema = mongoose.Schema({
             ref:'Product'
         }
     ],
-    isadmin:{
-        type:Boolean,
-        default:false
-    },
     orders:[
         {
             type:mongoose.Schema.Types.ObjectId,
