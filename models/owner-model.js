@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const ownerSchema = mongoose.Schema({
     fullName:{
         type:String,
         required:true
@@ -13,30 +13,20 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    cart: [
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:'Product'
-        }
-    ],
-    isadmin:{
-        type:Boolean,
-        default:false
-    },
-    orders:[
+    products:[
         {
             type:mongoose.Schema.Types.ObjectId,
             ref:'Order'
         }
     ],
-    contact:{
-        type: Number,
-    },
     picture:{
+        type: String
+    },
+    gstin:{
         type: String
     }
 
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Owner', ownerSchema);
 
